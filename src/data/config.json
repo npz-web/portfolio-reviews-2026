@@ -1,17 +1,17 @@
 {
   "year": "2026",
-  "date": "Wednesday March 25, 2026",
+  "date": "Tuesday, March 24, 2026",
   "time": "6:00–9:00pm",
   "calendarLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20260326T220000Z%2F20260327T010000Z&details=The%20review%20is%20a%20chance...&location=65%20Saint%20James%20Street%20Kingston%2C%20NY%2012401&text=2026%20Hudson%20Valley%20Portfolio%20Review",
   "location": {
-    "name": "Good Work Institute",
-    "address1": "65 Saint James Street",
+    "name": "Senate Garage",
+    "address1": "4 N Front St",
     "address2": "Kingston, NY 12401",
-    "mapEmbedUrl": "https://www.google.com/maps/embed/v1/place?q=Good+Work+Institute,+Saint+James+Street,+Kingston,+NY,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.0351200416926!2d-74.0191574!3d41.935096699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dd0f783afb7517%3A0xc23641ff6be745e1!2sSenate%20Garage!5e0!3m2!1sen!2sus!4v1771800939525!5m2!1sen!2sus"
   },
-  "registrationFormUrl": "https://forms.office.com/Pages/ResponsePage.aspx?id=N1fU61KzIke7DJ9Tm8v6ZcBt6KoU1ahDnG6AMsyrJGhUN0wwVk04SkxMWlc3VERZRDhJNkVBSFRURi4u&embed=true",
+  "registrationFormUrl": "https://forms.microsoft.com/Pages/ResponsePage.aspx?id=N1fU61KzIke7DJ9Tm8v6ZcBt6KoU1ahDnG6AMsyrJGhURU40QzVZTFZGNEJCN1VHWFcwM1AzSTU2SC4u&embed=true",
   "images": {
-    "background": "/greenhouse.jpeg",
+    "background": "public/sg-room.jpg",
     "ogImage": "/ogimg.png"
   },
   "theme": {
