@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import siteConfig from '../data/config.json'; // 1. Import the config
+import siteConfig from '../data/config.json'; 
 
 const { title, description } = Astro.props;
 ---
@@ -11,16 +11,17 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <meta property="og:type" content="website">
     <meta property="og:title" content={title}>
-    <meta property="og:url" content={`https://npz-web.github.io/portfolio-reviews-${siteConfig.year}/`}>
+    <meta property="og:url" content={`https://npz-web.github.io${import.meta.env.BASE_URL}`}>
     
-    <meta property="og:image" content={`https://npz-web.github.io/portfolio-reviews-${siteConfig.year}${siteConfig.images.ogImage}`}>
+    <meta property="og:image" content={`https://npz-web.github.io${import.meta.env.BASE_URL}${siteConfig.images.ogImage}`}>
     
     <meta name="description" content={description}>
     <meta name="author" content="Shauna Keating">
-    <link rel="icon" type="image/png" href="/favicon.ico">
+    
+    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}favicon.ico`}>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
     <link href={siteConfig.theme.fontUrl} rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     
@@ -36,9 +37,9 @@ const { title, description } = Astro.props;
     <header>
         <h1>{siteConfig.year} Hudson Valley Portfolio Review</h1>
         <nav>
-            <a href="/#info">Event Info</a>
-            <a href="/#about">About</a>
-            <a href="/#register">Register</a>
+            <a href={`${import.meta.env.BASE_URL}#info`}>Event Info</a>
+            <a href={`${import.meta.env.BASE_URL}#about`}>About</a>
+            <a href={`${import.meta.env.BASE_URL}#register`}>Register</a>
             <a href="#top">Back to Top</a>
         </nav>
     </header>
@@ -57,14 +58,13 @@ const { title, description } = Astro.props;
 </html>
 
 <style is:global define:vars={{ 
-    bgImage: `url(${siteConfig.images.background})`,
+    bgImage: `url(${import.meta.env.BASE_URL}${siteConfig.images.background})`,
     displayFont: `"${siteConfig.theme.displayFontFamily}", serif`,
     bgColor: siteConfig.theme.colors.bg,
     borderColor: siteConfig.theme.colors.border,
     accentBgColor: siteConfig.theme.colors.accentBg
 }}>
     :root {
-        /* Override Simple.css defaults */
         --bg: var(--bgColor);
         --border: var(--borderColor);
         --accent-bg: var(--accentBgColor);
