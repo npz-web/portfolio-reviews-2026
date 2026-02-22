@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+const { title, description } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{title}</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={title}>
+    <meta property="og:url" content="https://npz-web.github.io/portfolio-review-2026/">
+    <meta property="og:image" content="https://npz-web.github.io/portfolio-review-2026/ogimg.png">
+    <meta name="description" content={description}>
+    <meta name="author" content="Shauna Keating">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DRD89LYWB"></script>
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6DRD89LYWB');
+    </script>
+</head>
+<body>
+    <header>
+        <h1>2026 Hudson Valley Portfolio Review</h1>
+        <nav>
+            <a href="/#info">Event Info</a>
+            <a href="/#about">About</a>
+            <a href="/#register">Register</a>
+            <a href="#top">Back to Top</a>
+        </nav>
+    </header>
+    <div id="top"></div>
+    <main>
+        <slot />
+    </main>
+    <footer>
+        <p>Copyright © {currentYear} Shauna Keating All Rights Reserved</p>
+        <p>Built with Astro, styled by extending <a href="https://simplecss.org" target="_blank" rel="noopener noreferrer">Simple.css</a>. Hosted and deployed on <a href="https://github.com/npz-web/portfolio-review-2026" target="_blank" rel="noopener noreferrer">Github Pages</a>.</p>
+        <p><a href="https://fonts.google.com/specimen/Inclusive+Sans" target="_blank" rel="noopener noreferrer">Inclusive Sans</a> & <a href="https://fonts.google.com/specimen/Bagel+Fat+One" target="_blank" rel="noopener noreferrer">Bagel Fat One</a> served over Google Fonts.</p>
+    </footer>
+</body>
+</html>

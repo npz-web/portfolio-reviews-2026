@@ -1,0 +1,82 @@
+:root {
+    --sans-font: "Inclusive Sans",
+        Verdana,
+        Geneva,
+        Tahoma,
+        sans-serif;
+
+}
+
+body {
+    font-family: var(--sans-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    background: url(/greenhouse.jpeg);
+    /* Added leading slash assuming it's in /public */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body>header {
+    position: fixed;
+    width: 100vw;
+    padding: 0;
+    z-index: 10;
+}
+
+header>nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+
+}
+
+header>nav a {
+    background: var(--accent-bg);
+}
+
+main {
+    margin-top: 150px;
+    margin-bottom: 300px;
+    background: var(--bg);
+    border: var(--border) 1px solid;
+    border-radius: 9px;
+    padding-top: 0px;
+    -webkit-box-shadow: 0px 3px 16px -1px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 3px 16px -1px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 3px 16px -1px rgba(0, 0, 0, 0.22);
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Bagel Fat One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body>footer {
+    background: var(--bg);
+    width: 100vw;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: left;
+    padding-right: 140px;
+}
+
+iframe {
+    border: solid var(--border) 2px;
+    border-radius: 9px;
+    width: 100%;
+}
+
+#register iframe {
+    min-height: 620px;
+}
