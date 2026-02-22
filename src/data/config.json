@@ -11,8 +11,8 @@
   },
   "registrationFormUrl": "https://forms.microsoft.com/Pages/ResponsePage.aspx?id=N1fU61KzIke7DJ9Tm8v6ZcBt6KoU1ahDnG6AMsyrJGhURU40QzVZTFZGNEJCN1VHWFcwM1AzSTU2SC4u&embed=true",
   "images": {
-    "background": "public/sg-room.jpg",
-    "ogImage": "/ogimg.png"
+    "background": "sg-room.jpg",
+    "ogImage": "ogimg.png"
   },
   "theme": {
     "fontUrl": "https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap",
