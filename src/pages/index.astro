@@ -1,28 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import siteConfig from '../data/config.json';
 ---
 
 <Layout 
-    title="Hudson Valley Portfolio Reviews 2026" 
+    title={`Hudson Valley Portfolio Reviews ${siteConfig.year}`} 
     description="A community event for emerging designers to get feedback on their portfolios, resumes, etc. as they prepare to apply to their first ever full time role in the design industry."
 >
     <section id="info">
         <h2>Event Information</h2>
         <h3>Date & Time</h3>
-        <p><strong>[Insert 2026 Date]</strong> <br> 6:00–9:00pm</p>
+        <p><strong>{siteConfig.date}</strong> <br> {siteConfig.time}</p>
         
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20260326T220000Z%2F20260327T010000Z&details=The%20review%20is%20a%20chance%20for%20emerging%20designers...&location=65%20Saint%20James%20Street%20Kingston%2C%20NY%2012401&text=2026%20Hudson%20Valley%20Portfolio%20Review"
-            target="_blank" rel="noopener noreferrer" title="Save Event in Google Calendar">Add to Google Calendar</a>
+        <a href={siteConfig.calendarLink} target="_blank" rel="noopener noreferrer" title="Save Event in Google Calendar">Add to Google Calendar</a>
 
         <h3>Location</h3>
         <p id="location">
-            <strong>Good Work Institute</strong> <br>
-            65 Saint James Street
-            Kingston, NY 12401
+            <strong>{siteConfig.location.name}</strong> <br>
+            {siteConfig.location.address1} <br>
+            {siteConfig.location.address2}
         </p>
         <div style="text-decoration:none; overflow:hidden;max-width:100%;width:100%;height:200px;">
             <div id="gmap-canvas" style="height:100%; width:100%;max-width:100%;">
-                <iframe aria-labelledby="location" style="height:100%;width:100%;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Good+Work+Institute,+Saint+James+Street,+Kingston,+NY,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                <iframe aria-labelledby="location" style="height:100%;width:100%;" frameborder="0" src={siteConfig.location.mapEmbedUrl}></iframe>
             </div>
         </div>
     </section>
@@ -30,18 +30,18 @@ import Layout from '../layouts/Layout.astro';
     <section id="about">
         <h2>About</h2>
         <p>
-            The review is a chance for emerging designers (students, recent graduates, career switchers, bootcamp graduates, anyone early in their design career) to practice their interviewing skills and get valuable feedback from local professionals about their design work and resume in a no-risk, non-competitive environment geared at preparing them for the professional portfolio presentation process. Participants also have the opportunity to network and share their work with each other.
+            The review is a chance for emerging designers... (Keep your existing paragraph here)
         </p>
     </section>
 
     <section id="register">
         <h2>Register as a volunteer reviewer</h2>
         <p>
-            Reviewers of all levels of experience welcome! We ask that you have at least one year of work experience in the design field. It helps our reviewees to get to speak both to leaders and hiring managers, but the folks who broke into the industry recently have a helpful perspective, too! By registering, you agree to abide by the event <a href="/coc">Code of Conduct</a>.
+            Reviewers of all levels of experience welcome!... (Keep your existing paragraph here)
         </p>
         
         <iframe width="640px" height="480px" aria-label="reviewer registration form"
-            src="https://forms.office.com/Pages/ResponsePage.aspx?id=N1fU61KzIke7DJ9Tm8v6ZcBt6KoU1ahDnG6AMsyrJGhUN0wwVk04SkxMWlc3VERZRDhJNkVBSFRURi4u&embed=true"
+            src={siteConfig.registrationFormUrl}
             frameborder="0" marginwidth="0" marginheight="0" style="max-width:100%; max-height:100vh"
             allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
     </section>

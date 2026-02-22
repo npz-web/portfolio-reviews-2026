@@ -1,0 +1,26 @@
+{
+  "year": "2026",
+  "date": "Wednesday March 25, 2026",
+  "time": "6:00–9:00pm",
+  "calendarLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20260326T220000Z%2F20260327T010000Z&details=The%20review%20is%20a%20chance...&location=65%20Saint%20James%20Street%20Kingston%2C%20NY%2012401&text=2026%20Hudson%20Valley%20Portfolio%20Review",
+  "location": {
+    "name": "Good Work Institute",
+    "address1": "65 Saint James Street",
+    "address2": "Kingston, NY 12401",
+    "mapEmbedUrl": "https://www.google.com/maps/embed/v1/place?q=Good+Work+Institute,+Saint+James+Street,+Kingston,+NY,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+  },
+  "registrationFormUrl": "https://forms.office.com/Pages/ResponsePage.aspx?id=N1fU61KzIke7DJ9Tm8v6ZcBt6KoU1ahDnG6AMsyrJGhUN0wwVk04SkxMWlc3VERZRDhJNkVBSFRURi4u&embed=true",
+  "images": {
+    "background": "/greenhouse.jpeg",
+    "ogImage": "/ogimg.png"
+  },
+  "theme": {
+    "fontUrl": "https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap",
+    "displayFontFamily": "Bagel Fat One",
+    "colors": {
+      "bg": "#ffffff",
+      "border": "#dcdcdc",
+      "accentBg": "#f4f4f4"
+    }
+  }
+}

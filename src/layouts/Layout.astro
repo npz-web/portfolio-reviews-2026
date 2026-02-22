@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
+import siteConfig from '../data/config.json'; // 1. Import the config
+
 const { title, description } = Astro.props;
-const currentYear = new Date().getFullYear();
 ---
 <!doctype html>
 <html lang="en">
@@ -10,14 +11,17 @@ const currentYear = new Date().getFullYear();
     <title>{title}</title>
     <meta property="og:type" content="website">
     <meta property="og:title" content={title}>
-    <meta property="og:url" content="https://npz-web.github.io/portfolio-review-2026/">
-    <meta property="og:image" content="https://npz-web.github.io/portfolio-review-2026/ogimg.png">
+    <meta property="og:url" content={`https://npz-web.github.io/portfolio-reviews-${siteConfig.year}/`}>
+    
+    <meta property="og:image" content={`https://npz-web.github.io/portfolio-reviews-${siteConfig.year}${siteConfig.images.ogImage}`}>
+    
     <meta name="description" content={description}>
     <meta name="author" content="Shauna Keating">
     <link rel="icon" type="image/png" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    
+    <link href={siteConfig.theme.fontUrl} rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DRD89LYWB"></script>
@@ -30,7 +34,7 @@ const currentYear = new Date().getFullYear();
 </head>
 <body>
     <header>
-        <h1>2026 Hudson Valley Portfolio Review</h1>
+        <h1>{siteConfig.year} Hudson Valley Portfolio Review</h1>
         <nav>
             <a href="/#info">Event Info</a>
             <a href="/#about">About</a>
@@ -39,13 +43,38 @@ const currentYear = new Date().getFullYear();
         </nav>
     </header>
     <div id="top"></div>
+    
     <main>
         <slot />
     </main>
+
     <footer>
-        <p>Copyright © {currentYear} Shauna Keating All Rights Reserved</p>
-        <p>Built with Astro, styled by extending <a href="https://simplecss.org" target="_blank" rel="noopener noreferrer">Simple.css</a>. Hosted and deployed on <a href="https://github.com/npz-web/portfolio-review-2026" target="_blank" rel="noopener noreferrer">Github Pages</a>.</p>
-        <p><a href="https://fonts.google.com/specimen/Inclusive+Sans" target="_blank" rel="noopener noreferrer">Inclusive Sans</a> & <a href="https://fonts.google.com/specimen/Bagel+Fat+One" target="_blank" rel="noopener noreferrer">Bagel Fat One</a> served over Google Fonts.</p>
+        <p>Copyright © {siteConfig.year} Shauna Keating All Rights Reserved</p>
+        <p>Built with Astro, styled by extending <a href="https://simplecss.org" target="_blank" rel="noopener noreferrer">Simple.css</a>. Hosted and deployed on Github Pages.</p>
+        <p><a href="https://fonts.google.com/specimen/Inclusive+Sans" target="_blank" rel="noopener noreferrer">Inclusive Sans</a> & <a href={`https://fonts.google.com/specimen/${siteConfig.theme.displayFontFamily.replace(/ /g, '+')}`} target="_blank" rel="noopener noreferrer">{siteConfig.theme.displayFontFamily}</a> served over Google Fonts.</p>
     </footer>
 </body>
 </html>
+
+<style is:global define:vars={{ 
+    bgImage: `url(${siteConfig.images.background})`,
+    displayFont: `"${siteConfig.theme.displayFontFamily}", serif`,
+    bgColor: siteConfig.theme.colors.bg,
+    borderColor: siteConfig.theme.colors.border,
+    accentBgColor: siteConfig.theme.colors.accentBg
+}}>
+    :root {
+        /* Override Simple.css defaults */
+        --bg: var(--bgColor);
+        --border: var(--borderColor);
+        --accent-bg: var(--accentBgColor);
+    }
+
+    body {
+        background-image: var(--bgImage);
+    }
+
+    h1, h2, h3 {
+        font-family: var(--displayFont);
+    }
+</style>
