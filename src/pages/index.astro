@@ -10,7 +10,7 @@ const formatGCalDate = (isoString) => {
 
 // 2. Build the URL parameters dynamically
 const gCalDates = `${formatGCalDate(siteConfig.eventStart)}/${formatGCalDate(siteConfig.eventEnd)}`;
-const eventTitle = `${siteConfig.year} Hudson Valley Portfolio Review`;
+const eventTitle = `${siteConfig.year} Hudson Valley Portfolio Review for Emerging Designers`;
 const eventLocation = `${siteConfig.location.name}, ${siteConfig.location.address1}, ${siteConfig.location.address2}`;
 
 // 3. Construct the final link
@@ -19,7 +19,7 @@ const calendarLink = `https://calendar.google.com/calendar/render?action=TEMPLAT
 
 <Layout 
     title={`Hudson Valley Portfolio Reviews ${siteConfig.year}`} 
-    description="A community event for emerging designers to get feedback on their portfolios, resumes, etc. as they prepare to apply to their first ever full time role in the design industry."
+    description="A community event for emerging designers to get expert feedback on portfolios and resumes as they prepare for their first design role."
 	isHome={true}
 >
     <section id="info">
