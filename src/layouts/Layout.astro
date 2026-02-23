@@ -22,7 +22,12 @@ const { title, description } = Astro.props;
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href={siteConfig.theme.fontUrl} rel="stylesheet">
+    
+    <style is:inline set:html={`
+        @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+        @import url('${siteConfig.theme.fontUrl}');
+    `}></style>
+
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DRD89LYWB"></script>
@@ -58,23 +63,14 @@ const { title, description } = Astro.props;
 </html>
 
 <style is:global define:vars={{ 
-    bgImage: `url(${import.meta.env.BASE_URL}${siteConfig.images.background})`,
-    displayFont: `"${siteConfig.theme.displayFontFamily}", serif`,
-    bgColor: siteConfig.theme.colors.bg,
-    borderColor: siteConfig.theme.colors.border,
-    accentBgColor: siteConfig.theme.colors.accentBg
+    bgImage: `url('${import.meta.env.BASE_URL}${siteConfig.images.background}')`,
+    displayFont: `"${siteConfig.theme.displayFontFamily}", serif`
 }}>
-    :root {
-        --bg: var(--bgColor);
-        --border: var(--borderColor);
-        --accent-bg: var(--accentBgColor);
-    }
-
     body {
         background-image: var(--bgImage);
     }
 
-    h1, h2, h3 {
+    h1, h2 {
         font-family: var(--displayFont);
     }
 </style>

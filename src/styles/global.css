@@ -4,7 +4,8 @@
         Geneva,
         Tahoma,
         sans-serif;
-
+    --displayFont: "Langer",
+        serif;
 }
 
 body {
@@ -53,9 +54,9 @@ main {
 
 h1,
 h2,
-h3 {
-    font-weight: 400;
-    font-style: normal;
+{
+font-weight: 400;
+font-style: normal;
 }
 
 body>footer {

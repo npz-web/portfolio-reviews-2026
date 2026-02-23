@@ -2,7 +2,9 @@
   "year": "2026",
   "date": "Tuesday, March 24, 2026",
   "time": "6:00–9:00pm",
-  "calendarLink": "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20260326T220000Z%2F20260327T010000Z&details=The%20review%20is%20a%20chance...&location=65%20Saint%20James%20Street%20Kingston%2C%20NY%2012401&text=2026%20Hudson%20Valley%20Portfolio%20Review",
+  "eventStart": "2026-03-24T18:00:00-04:00",
+  "eventEnd": "2026-03-24T21:00:00-04:00",
+  "calendarDescription": "The review is a chance for emerging designers to get feedback on their portfolios, resumes, etc. as they prepare to apply to their first ever full time role in the design industry",
   "location": {
     "name": "Senate Garage",
     "address1": "4 N Front St",
@@ -11,16 +13,11 @@
   },
   "registrationFormUrl": "https://forms.microsoft.com/Pages/ResponsePage.aspx?id=N1fU61KzIke7DJ9Tm8v6ZcBt6KoU1ahDnG6AMsyrJGhURU40QzVZTFZGNEJCN1VHWFcwM1AzSTU2SC4u&embed=true",
   "images": {
-    "background": "sg-room.jpg",
-    "ogImage": "ogimg.png"
+    "background": "/sg-room.jpg",
+    "ogImage": "/ogimg.png"
   },
   "theme": {
-    "fontUrl": "https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap",
-    "displayFontFamily": "Bagel Fat One",
-    "colors": {
-      "bg": "#ffffff",
-      "border": "#dcdcdc",
-      "accentBg": "#f4f4f4"
-    }
+    "fontUrl": "https://fonts.googleapis.com/css2?family=Langar&display=swap",
+    "displayFontFamily": "Langar"
   }
 }

@@ -1,6 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import siteConfig from '../data/config.json';
+
+// 1. Helper function to format dates exactly how Google Calendar requires (YYYYMMDDTHHMMSSZ)
+const formatGCalDate = (isoString) => {
+    const date = new Date(isoString);
+    return date.toISOString().replace(/-|:|\.\d\d\d/g, '');
+};
+
+// 2. Build the URL parameters dynamically
+const gCalDates = `${formatGCalDate(siteConfig.eventStart)}/${formatGCalDate(siteConfig.eventEnd)}`;
+const eventTitle = `${siteConfig.year} Hudson Valley Portfolio Review`;
+const eventLocation = `${siteConfig.location.name}, ${siteConfig.location.address1}, ${siteConfig.location.address2}`;
+
+// 3. Construct the final link
+const calendarLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${gCalDates}&details=${encodeURIComponent(siteConfig.calendarDescription)}&location=${encodeURIComponent(eventLocation)}`;
 ---
 
 <Layout 
@@ -12,7 +26,7 @@ import siteConfig from '../data/config.json';
         <h3>Date & Time</h3>
         <p><strong>{siteConfig.date}</strong> <br> {siteConfig.time}</p>
         
-        <a href={siteConfig.calendarLink} target="_blank" rel="noopener noreferrer" title="Save Event in Google Calendar">Add to Google Calendar</a>
+        <a href={calendarLink} target="_blank" rel="noopener noreferrer" title="Save Event in Google Calendar">Add to Google Calendar</a>
 
         <h3>Location</h3>
         <p id="location">
@@ -37,11 +51,8 @@ import siteConfig from '../data/config.json';
     <section id="register">
         <h2>Register as a volunteer reviewer</h2>
         <p>
-                Reviewers of all levels of experience welcome! We ask that you have at least one year of work experience
-                in the design field. It helps our reviewees to get to speak both to leaders and hiringin managers, but
-                the folks who broke into the industry recently have a helpful perspective, too! By registering, you
-                agree to abide by the event <a href="coc.html">Code of Conduct</a>.
-            </p>
+            Reviewers of all levels of experience welcome! We ask that you have at least one year of work experience in the design field. It helps our reviewees to get to speak both to leaders and hiring managers, but the folks who broke into the industry recently have a helpful perspective, too! By registering, you agree to abide by the event <a href="coc.html">Code of Conduct</a>.
+        </p>
         
         <iframe width="640px" height="480px" aria-label="reviewer registration form"
             src={siteConfig.registrationFormUrl}
