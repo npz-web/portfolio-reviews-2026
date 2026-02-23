@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import siteConfig from '../data/config.json'; 
 
-const { title, description } = Astro.props;
+const { title, description, isHome = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -42,9 +42,16 @@ const { title, description } = Astro.props;
     <header>
         <h1>{siteConfig.year} Hudson Valley Portfolio Review</h1>
         <nav>
-            <a href={`${import.meta.env.BASE_URL}#info`}>Event Info</a>
-            <a href={`${import.meta.env.BASE_URL}#about`}>About</a>
-            <a href={`${import.meta.env.BASE_URL}#register`}>Register</a>
+            {isHome ? (
+                <>
+                    <a href="#info">Event Info</a>
+                    <a href="#about">About</a>
+                    <a href="#register">Register</a>
+                </>
+            ) : (
+                <a href={import.meta.env.BASE_URL}>Return Home</a>
+            )}
+            
             <a href="#top">Back to Top</a>
         </nav>
     </header>

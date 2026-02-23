@@ -20,6 +20,7 @@ const calendarLink = `https://calendar.google.com/calendar/render?action=TEMPLAT
 <Layout 
     title={`Hudson Valley Portfolio Reviews ${siteConfig.year}`} 
     description="A community event for emerging designers to get feedback on their portfolios, resumes, etc. as they prepare to apply to their first ever full time role in the design industry."
+	isHome={true}
 >
     <section id="info">
         <h2>Event Information</h2>
@@ -51,7 +52,9 @@ const calendarLink = `https://calendar.google.com/calendar/render?action=TEMPLAT
     <section id="register">
         <h2>Register as a volunteer reviewer</h2>
         <p>
-            Reviewers of all levels of experience welcome! We ask that you have at least one year of work experience in the design field. It helps our reviewees to get to speak both to leaders and hiring managers, but the folks who broke into the industry recently have a helpful perspective, too! By registering, you agree to abide by the event <a href="coc.html">Code of Conduct</a>.
+            Reviewers of all levels of experience welcome! We ask that you have at least one year of work experience in the design field. 
+			It helps our reviewees to get to speak both to leaders and hiring managers, but the folks who broke into the industry recently have a helpful perspective, too! 
+			By registering, you agree to abide by the event <a href={`${import.meta.env.BASE_URL}/coc`}>Code of Conduct</a>..
         </p>
         
         <iframe width="640px" height="480px" aria-label="reviewer registration form"
