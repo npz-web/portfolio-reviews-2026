@@ -71,7 +71,10 @@ const { title, description, isHome = false } = Astro.props;
 
 <style is:global define:vars={{ 
     bgImage: `url('${import.meta.env.BASE_URL}${siteConfig.images.background}')`,
-    displayFont: `"${siteConfig.theme.displayFontFamily}", serif`
+    displayFont: `"${siteConfig.theme.displayFontFamily}", serif`,
+    bgColor: siteConfig.theme.colors.bg,
+    borderColor: siteConfig.theme.colors.border,
+    accentBgColor: siteConfig.theme.colors.accentBg
 }}>
     body {
         background-image: var(--bgImage);
